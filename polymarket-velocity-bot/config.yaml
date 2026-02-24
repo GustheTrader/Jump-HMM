@@ -1,0 +1,26 @@
+polymarket:
+  host: "https://clob.polymarket.com"
+  chain_id: 137
+  private_key: "0xYOUR_HEX_PRIVATE_KEY"  # NEVER COMMIT
+  funder: ""  # optional proxy
+
+assets:
+  - BTC
+  - ETH
+  - SOL
+  - XRP
+
+timeframes: ["5m", "15m"]   # velocity mix — we’ll tune
+
+edge:
+  min_edge: 0.035          # 3.5 % EV after fees — your call
+  max_risk_per_trade: 0.25 # % of bankroll (Kelly fraction later)
+
+risk:
+  kelly_fraction: 0.5
+  max_dd: 0.20
+  daily_loss_limit: 0.10
+
+execution:
+  maker_only: false
+  slippage_buffer: 0.008
